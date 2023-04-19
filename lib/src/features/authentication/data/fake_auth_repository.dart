@@ -15,14 +15,14 @@ class FakeAuthRepository {
 
   Future<void> createUserWithEmailAndPassword(
       String email, String password) async {
+    // await Future.delayed(const Duration(seconds: 3));
+    // throw Exception('connection failed');
     if (currentUser == null) {
       createNewUser(email);
     }
   }
 
   Future<void> signOut() async {
-    // await Future.delayed(const Duration(seconds: 3));
-    // throw Exception('connection failed');
     _authState.value = null;
   }
 
